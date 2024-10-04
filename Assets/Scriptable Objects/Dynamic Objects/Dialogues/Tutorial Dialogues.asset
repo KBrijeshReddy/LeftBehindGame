@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f30fc967c70e194fa75235dae445922, type: 3}
+  m_Name: Tutorial Dialogues
+  m_EditorClassIdentifier: 
+  dialogues:
+  - I know you have many questions.
+  - All will be answered soon.
+  - But right now, I need you to kill those robots and get me their energy!
+  fillers:
+  - You can press left click to swing your saber.
+  - Your health is visible in the top left corner, along with my energy bar.
+  - "If you ever are low on health, press Q and I will heal you by using up some
+    of my energy. Don\u2019t die!"
+  exhausted: 0

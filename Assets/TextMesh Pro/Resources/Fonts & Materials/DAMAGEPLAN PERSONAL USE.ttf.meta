@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 517372f152da61641bed77724993a12a
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - DAMAGEPLAN PERSONAL USE
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 5af0ed8e9e522e44fb361fa079101d83, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f30fc967c70e194fa75235dae445922, type: 3}
+  m_Name: Checkpoint Dialogues
+  m_EditorClassIdentifier: 
+  dialogues:
+  - This is the hub.
+  - "There\u2019s this upgrader here that\u2019s super important for your journey. "
+  - You can use it to upgrade your saber, and also most importantly you're supposed
+    to upgrade me.
+  - "Other than that there\u2019s two other ways you can go here from now."
+  - 'Choose wisely and take charge. '
+  fillers:
+  - Explore! I need more energy.
+  exhausted: 1

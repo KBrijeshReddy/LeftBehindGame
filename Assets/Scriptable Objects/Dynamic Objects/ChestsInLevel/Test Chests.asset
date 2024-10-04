@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6724462ed982b7a40a25e0da065dfabe, type: 3}
+  m_Name: Test Chests
+  m_EditorClassIdentifier: 
+  level: 0
+  chests:
+  - {fileID: 11400000, guid: 496b8ee58bda5f647b5f8f10efcec4b7, type: 2}
+  - {fileID: 11400000, guid: 208724dc794707f4a827f0712f47d3fc, type: 2}
+  wasCollected: 0000

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6724462ed982b7a40a25e0da065dfabe, type: 3}
+  m_Name: Terrain2 Chests
+  m_EditorClassIdentifier: 
+  level: 0
+  chests:
+  - {fileID: 11400000, guid: 81096e8b5eddb2b45b4f9dc37ce4d145, type: 2}
+  - {fileID: 11400000, guid: f69041bcb932e244dbe943499b9fc803, type: 2}
+  - {fileID: 11400000, guid: 81096e8b5eddb2b45b4f9dc37ce4d145, type: 2}
+  - {fileID: 11400000, guid: f69041bcb932e244dbe943499b9fc803, type: 2}
+  - {fileID: 11400000, guid: a62db9d90f81ba94fbbf1d4bc24b4b8e, type: 2}
+  - {fileID: 11400000, guid: 7d9e8a96f83d93f4f87ef5a3ae0fb801, type: 2}
+  wasCollected: 000000000000
