@@ -74,5 +74,4 @@ public class SettingsManager : MonoBehaviour
         volumes[name] = value;
         AudioListener.volume = value;
     }
-
 }

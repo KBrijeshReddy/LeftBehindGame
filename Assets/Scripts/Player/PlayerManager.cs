@@ -7,6 +7,10 @@ public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager instance;
 
+    public bool inCombat;
+    public bool isAttacking;
+
+
     [Header("-----------------Preset-----------------")]
     [SerializeField]
     float mouseSens;
@@ -21,7 +25,6 @@ public class PlayerManager : MonoBehaviour
     [SerializeField]
     private Transform cameraTransform;
     public GameObject meleeAttackManagers;
-
 
 
     private CharacterController controller;
@@ -59,7 +62,7 @@ public class PlayerManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!InventoryUI.instance.isActive)
+        if (!InventoryUI.isActive)
         {
             // movement
             x = Input.GetAxis("Horizontal");

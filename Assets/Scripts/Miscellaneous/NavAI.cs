@@ -21,7 +21,7 @@ public class NavAI : MonoBehaviour
 
     void Update()
     {
-        if (isBot && MeleeAttackManager.instance.inCombat) {
+        if (isBot && PlayerManager.instance.inCombat) {
             nav.destination = dest.transform.position;
         } else
         {

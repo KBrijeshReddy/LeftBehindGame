@@ -8,9 +8,7 @@ using System.Runtime.CompilerServices;
 public class InventoryUI : MonoBehaviour
 {
     public static InventoryUI instance; void Awake() { instance = this; }
-
-    [HideInInspector]
-    public bool isActive;
+    public static bool isActive;
 
 
     [Header("-----------------Preset-----------------")]
@@ -53,7 +51,6 @@ public class InventoryUI : MonoBehaviour
         inventory = InventoryManager.instance;
         inventorySlots = slotsPanel.GetComponentsInChildren<InventorySlot>();
         chestSlots = chestPanel.GetComponentsInChildren<InventorySlot>();
-        
     }
 
     void Update()
@@ -79,11 +76,11 @@ public class InventoryUI : MonoBehaviour
             UpdateUI();
 
             GetComponent<Canvas>().enabled = true;
-            chestPanel.SetActive(inventory.nearChest);
+            chestPanel.SetActive(InventoryManager.nearInteractors["chest"]);
 
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            inventory.selected = null;
+            InventoryManager.selected = null;
 
             CallUpdateTraderUI();
         } else
@@ -93,11 +90,11 @@ public class InventoryUI : MonoBehaviour
 
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            inventory.selected = null;
+            InventoryManager.selected = null;
             Deselect();
         }
 
-        if (inventory.nearUpgrader) {
+        if (InventoryManager.nearInteractors["upgrader"]) {
             inventoryPanel.SetActive(false);
             upgradingPanel.SetActive(turnOn);
             foreach (var upgradingUI in upgradingUIs) {
@@ -111,7 +108,7 @@ public class InventoryUI : MonoBehaviour
     }
 
     public void CallUpdateTraderUI() {
-        if (inventory.nearTrader) {
+        if (InventoryManager.nearInteractors["trader"]) {
             tradePanel.SetActive(true);
             TradingManager.instance.UpdateTraderUI();
         } else
@@ -133,7 +130,7 @@ public class InventoryUI : MonoBehaviour
             }
         }
 
-        if (inventory.nearChest) {
+        if (InventoryManager.nearInteractors["chest"]) {
             // Debug.Log(inventory.GetChest().counts.Count);
             
             for (int i = 0; i < inventory.GetChest().counts.Count; i++)
@@ -152,17 +149,17 @@ public class InventoryUI : MonoBehaviour
             }
         }
 
-        collectButton.interactable = inventory.nearChest;
+        collectButton.interactable = InventoryManager.nearInteractors["chest"];
     }
 
     public void Select(Item item) {
-        inventory.selected = item;
+        InventoryManager.selected = item;
         ChangeDescription(item);
         CallUpdateTraderUI();
     }
 
     public void Deselect() {
-        inventory.selected = null;
+        InventoryManager.selected = null;
         ChangeDescription(null);
         CallUpdateTraderUI();
     }

@@ -2,20 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChestInteraction : MonoBehaviour
+public class ChestInteraction : ObjectInteraction
 {
     [SerializeField]
-    private int chestID; // Starts from 1
+    private int chestID;
 
-    void OnTriggerStay(Collider collider) {
-        if (collider.CompareTag("Player")) {
-            InventoryManager.instance.ChangeChestID(chestID, true);
-        }
-    }
-
-    void OnTriggerExit(Collider collider) {
-        if (collider.CompareTag("Player")) {
-            InventoryManager.instance.ChangeChestID(chestID, false);
-        }
+    protected override void PreInteraction(bool active) {
+        InventoryManager.nearInteractors[objectName] = active;
+        text.SetActive( InventoryManager.instance.ChangeChestID(chestID, active) );
     }
 }

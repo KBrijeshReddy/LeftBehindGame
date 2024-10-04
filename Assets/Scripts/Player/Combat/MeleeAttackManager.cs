@@ -5,11 +5,7 @@ using UnityEngine;
 
 public class MeleeAttackManager : MonoBehaviour
 {
-    public static MeleeAttackManager instance; void Awake() { instance = this; }
-
-    [HideInInspector]
-    public bool inCombat;
-
+    // public static MeleeAttackManager instance; void Awake() { instance = this; }
 
     [Header("-----------------Preset-----------------")]
     [SerializeField]
@@ -29,7 +25,6 @@ public class MeleeAttackManager : MonoBehaviour
     private List<bool> attackAnims;
     private List<bool> attackWindows;
     private List<GameObject> attackHits;
-    public bool isAttacking;
 
     void Start()
     {
@@ -37,12 +32,12 @@ public class MeleeAttackManager : MonoBehaviour
         attackWindows = new List<bool> {false, false, false};
         attackHits = new List<GameObject> {null, null, null};
 
-        inCombat = false;
+        PlayerManager.instance.inCombat = false;
     }
 
-    private async void Attack(int attackNum) {
-        inCombat =true;
-        isAttacking= true;
+    async void Attack(int attackNum) {
+        PlayerManager.instance.inCombat = true;
+        PlayerManager.instance.isAttacking = true;
         Debug.Log("Performing attack " + attackNum);
         attackHits[attackNum] = Instantiate(attackFabs[attackNum], attackPos[attackNum].transform.position, attackPos[attackNum].transform.rotation);
         attackAnims[attackNum] = true;
@@ -56,18 +51,15 @@ public class MeleeAttackManager : MonoBehaviour
         attackWindows[attackNum] = false;
         attackAnims[attackNum] = false;
         anim.SetBool(animSetBools[attackNum], false);
-        isAttacking=false;
+        PlayerManager.instance.isAttacking = false;
 
-        await Task.Delay(10000);
-        inCombat = false;
+        await Task.Delay(10000 - attackAnimTimes[attackNum] - attackWindowTimes[attackNum]);
+        PlayerManager.instance.inCombat = false;
     }
 
     void Update()
     {
-        if (InventoryUI.instance.isActive || Dialogue.instance.canType)
-        return;
-
-        if (Input.GetMouseButtonDown(0)) {
+        if (Input.GetMouseButtonDown(0) && !InventoryUI.isActive && !Dialogue.instance.canType) {
             if (!attackAnims.Contains(true)) {
                 Attack(0);
             } else

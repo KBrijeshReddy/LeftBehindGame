@@ -5,17 +5,13 @@ using UnityEngine;
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager instance; void Awake() { instance = this; }
-
-    [HideInInspector]
-    public Item selected;
-    [HideInInspector]
-    public bool nearTrader;
-    [HideInInspector]
-    public bool nearChest;
-    [HideInInspector]
-    public bool nearUpgrader;
-    [HideInInspector]
-    public int chestID;
+    public static Dictionary<string, bool> nearInteractors = new Dictionary<string, bool> {
+        {"trader", false},
+        {"chest", false},
+        {"upgrader", false}
+    };
+    public static int chestID;
+    public static Item selected;
 
 
     [Header("-------------Scene-specific-------------")]
@@ -33,9 +29,6 @@ public class InventoryManager : MonoBehaviour
 
     void Start() {
         selected = null;
-        nearTrader = false;
-        nearChest = false;
-        nearUpgrader = false;
 
         if (Dialogue.instance.isTutorial)
         ResetValues();
@@ -109,7 +102,7 @@ public class InventoryManager : MonoBehaviour
 
         Debug.Log("Moved items from chest to inventory");
         chestsInLevel.wasCollected[chestID] = true;
-        nearChest = false;
+        nearInteractors["chest"] = false;
         InventoryUI.instance.UpdateUI(true);
     }
 
@@ -120,14 +113,9 @@ public class InventoryManager : MonoBehaviour
         return chestsInLevel.chests[chestID];
     }
 
-    public void ChangeChestID(int id, bool active) {
-        if (chestsInLevel.wasCollected[chestID]) {
-            nearChest = false;
-        } else
-        {
-            nearChest = active;
-        }
-
+    public bool ChangeChestID(int id, bool active) {
         chestID = id;
+        nearInteractors["chest"] = (active && !chestsInLevel.wasCollected[chestID]);
+        return nearInteractors["chest"];
     }
 }

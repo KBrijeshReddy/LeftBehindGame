@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.702
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.06017265, g: 0.051832043, b: 0.073451124, a: 0.702}
+  m_IndirectSpecularColor: {r: 0.060172625, g: 0.05183203, b: 0.07345101, a: 0.702}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2396,6 +2396,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 345024415}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &383420036 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6463166259877066580, guid: 7836cb4ef61fd3344a064895c3f95481, type: 3}
+  m_PrefabInstance: {fileID: 128226573}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &387191564
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6967,6 +6972,14 @@ PrefabInstance:
       propertyPath: deathAnim
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8168360770404730149, guid: 76dedf5e95b000f46b3b1ff19cd9416f, type: 3}
+      propertyPath: sword
+      value: 
+      objectReference: {fileID: 383420036}
+    - target: {fileID: 8168360770404730149, guid: 76dedf5e95b000f46b3b1ff19cd9416f, type: 3}
+      propertyPath: swordItem
+      value: 
+      objectReference: {fileID: 11400000, guid: 6dfaf9fc41635e942b0e359464f46daf, type: 2}
     - target: {fileID: 8168360770404730149, guid: 76dedf5e95b000f46b3b1ff19cd9416f, type: 3}
       propertyPath: enemies.Array.size
       value: 2

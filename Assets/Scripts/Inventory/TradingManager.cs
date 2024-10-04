@@ -16,19 +16,18 @@ public class TradingManager : MonoBehaviour
     private GameObject tradePanel;
 
     private InventorySlot[] traderSlots;
-    private InventoryManager inventory;
     private TradeItems tradeItems;
     private int importIndex;
 
-    void Start() {
+    void Start()
+    {
         traderSlots = tradePanel.GetComponentsInChildren<InventorySlot>();
-        inventory = InventoryManager.instance;
     }
 
     public void UpdateTraderUI() {
         Debug.Log("Updating trader UI");
 
-        if (inventory.selected == null || !inventory.selected.isTradable) {
+        if (InventoryManager.selected == null || !InventoryManager.selected.isTradable) {
             infoTMP.text = "(Select a tradable item to begin trading)";
             tradeButton.interactable = false;
 
@@ -38,7 +37,7 @@ public class TradingManager : MonoBehaviour
             }
         } else
         {
-            Item exportItem = inventory.selected;
+            Item exportItem = InventoryManager.selected;
             tradeItems = exportItem.importItems;
 
             for (int i = 0; i < traderSlots.Length; i++)
@@ -58,28 +57,16 @@ public class TradingManager : MonoBehaviour
         {
             importIndex = tradeItems.items.IndexOf(item);
 
-            infoTMP.text = "Trade 1 " + inventory.selected.itemName + " for " + tradeItems.counts[importIndex] + " " + tradeItems.items[importIndex].itemName + "?";
+            infoTMP.text = "Trade 1 " + InventoryManager.selected.itemName + " for " + tradeItems.counts[importIndex] + " " + tradeItems.items[importIndex].itemName + "?";
             tradeButton.interactable = true;
         }
     }
 
     public void Trade() {
-        Debug.Log("Trading 1 " + inventory.selected.itemName + " for " + tradeItems.counts[importIndex] + " " + tradeItems.items[importIndex].itemName);
-        inventory.Increase(tradeItems.items[importIndex], tradeItems.counts[importIndex]);
-        inventory.Decrease(inventory.selected, 1);
+        Debug.Log("Trading 1 " + InventoryManager.selected.itemName + " for " + tradeItems.counts[importIndex] + " " + tradeItems.items[importIndex].itemName);
+        InventoryManager.instance.Increase(tradeItems.items[importIndex], tradeItems.counts[importIndex]);
+        InventoryManager.instance.Decrease(InventoryManager.selected, 1);
         InventoryUI.instance.UpdateUI();
         UpdateTraderUI();
-    }
-
-    void OnTriggerEnter(Collider collider) {
-        if (collider.CompareTag("Player")) {
-            inventory.nearTrader = true;
-        }
-    }
-
-    void OnTriggerExit(Collider collider) {
-        if (collider.CompareTag("Player")) {
-            inventory.nearTrader = false;
-        }
     }
 }

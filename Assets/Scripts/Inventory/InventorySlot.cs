@@ -23,11 +23,9 @@ public class InventorySlot : MonoBehaviour
     private bool isTraderSlot = false;
 
 
-    private InventoryManager inventory;
     private InventoryUI inventoryUI;
 
     void Start() {
-        inventory = InventoryManager.instance;
         inventoryUI = InventoryUI.instance;
     }
 
@@ -58,11 +56,11 @@ public class InventorySlot : MonoBehaviour
             inventoryUI.ChangeDescription(item);
         } else
         {
-            if (inventory.nearTrader && item.isTradable) {
+            if (InventoryManager.nearInteractors["trader"] && item.isTradable) {
                 TradingManager.instance.UpdateTraderUI();
             }
             
-            if (inventory.selected == item) {
+            if (InventoryManager.selected == item) {
                 Debug.Log("Deselecting " + item.itemName);
                 inventoryUI.Deselect();
             } else

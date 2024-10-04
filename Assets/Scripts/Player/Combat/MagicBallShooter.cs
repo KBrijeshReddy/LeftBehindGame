@@ -35,7 +35,7 @@ public class MagicBallShooter : MonoBehaviour
         // Update the timer based on time passed
 
         // Check if the player presses the shoot button (P key) and can shoot
-        if (Input.GetMouseButtonDown(1) && readyToThrow && MeleeAttackManager.instance.isAttacking==false)
+        if (Input.GetMouseButtonDown(1) && readyToThrow && !PlayerManager.instance.isAttacking)
         {
             ShootTheBall();
             // Debug.Log("shot the ball");

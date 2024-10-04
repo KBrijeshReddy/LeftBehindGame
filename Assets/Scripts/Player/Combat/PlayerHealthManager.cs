@@ -105,9 +105,9 @@ public class PlayerHealthManager : MonoBehaviour
         //     vig.intensity.value = 0.114f;
         // }
 
-        MeleeAttackManager.instance.inCombat = true;
+        PlayerManager.instance.inCombat = true;
         await Task.Delay(10000);
-        MeleeAttackManager.instance.inCombat = false;
+        PlayerManager.instance.inCombat = false;
     }
 
     public void RegenerateEnergy(float damage) {
