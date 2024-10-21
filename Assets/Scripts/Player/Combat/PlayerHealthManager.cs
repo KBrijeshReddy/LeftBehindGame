@@ -74,11 +74,12 @@ public class PlayerHealthManager : MonoBehaviour
         health -= damage;
 
         if (health <= 0) {
+            health= 0; 
             Cursor.lockState = CursorLockMode.None;
             SettingsManager.instance.StopPlaying();
             // deathAnim.Play("death");
 
-            await Task.Delay(1000);
+            await Task.Delay(500);
             blackoutAnim.Play("blackout");
             await Task.Delay(1500);
 
