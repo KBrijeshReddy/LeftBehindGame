@@ -563,7 +563,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1da70c65a624f384ea8b0ec6122b5c0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inCombat: 0
   attackFabs:
   - {fileID: 780219763695262726, guid: b86e660c89d77154888e73cb136c0d45, type: 3}
   - {fileID: 2760232212926561670, guid: 7056809b3816ae74488f78efc81514a3, type: 3}
@@ -579,7 +578,6 @@ MonoBehaviour:
   attackAnimTimes: 900100009001000090010000
   attackWindowTimes: 4c0400004c04000000000000
   anim: {fileID: 6463166258629267937}
-  isAttacking: 0
 --- !u!114 &6463166258629267933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -771,7 +769,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1da70c65a624f384ea8b0ec6122b5c0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inCombat: 0
   attackFabs:
   - {fileID: 780219763695262726, guid: b86e660c89d77154888e73cb136c0d45, type: 3}
   - {fileID: 2760232212926561670, guid: 7056809b3816ae74488f78efc81514a3, type: 3}
@@ -787,7 +784,6 @@ MonoBehaviour:
   attackAnimTimes: 900100009001000090010000
   attackWindowTimes: 4c0400004c04000000000000
   anim: {fileID: 6463166258696547426}
-  isAttacking: 0
 --- !u!114 &6463166258696547423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -917,13 +913,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5518f389919bcde4bba20458d3361b6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeAttackManagers: {fileID: 6463166259877066580}
+  inCombat: 0
+  isAttacking: 0
   mouseSens: 200
   speed: 20
   sprintSpeed: 0
   gravity: -9.8
   jumpforce: 10
   cameraTransform: {fileID: 6463166260467412614}
+  meleeAttackManagers: {fileID: 6463166259877066580}
 --- !u!114 &4181834875972284785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1089,7 +1087,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1da70c65a624f384ea8b0ec6122b5c0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inCombat: 0
   attackFabs:
   - {fileID: 780219763695262726, guid: b86e660c89d77154888e73cb136c0d45, type: 3}
   - {fileID: 2760232212926561670, guid: 7056809b3816ae74488f78efc81514a3, type: 3}
@@ -1105,7 +1102,6 @@ MonoBehaviour:
   attackAnimTimes: 900100009001000090010000
   attackWindowTimes: 4c0400004c04000000000000
   anim: {fileID: 3416106779677305490}
-  isAttacking: 0
 --- !u!1 &6463166259877066580
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,7 +1114,7 @@ GameObject:
   - component: {fileID: 6463166259877066579}
   m_Layer: 0
   m_Name: Parent sword
-  m_TagString: Untagged
+  m_TagString: Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -11,6 +11,8 @@ TagManager:
   - Enemy
   - RobotDest
   - enemy
+  - Sword
+  - EnemyContainer
   layers:
   - Default
   - TransparentFX

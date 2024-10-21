@@ -10,7 +10,7 @@ public class SceneChanger : MonoBehaviour
     [SerializeField]
     private int sceneToEnter;
     [SerializeField]
-    private int domeScene;
+    private int endScreen;
     
     void OnTriggerEnter(Collider other)
     {
@@ -18,7 +18,7 @@ public class SceneChanger : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             if (gameEnd) { 
-                SceneManager.LoadScene(domeScene);
+                SceneManager.LoadScene(endScreen);
             } else
             {
                 SceneManager.LoadScene(sceneToEnter);

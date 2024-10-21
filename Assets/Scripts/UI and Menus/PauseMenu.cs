@@ -7,29 +7,38 @@ public class PauseMenu : MonoBehaviour
     [SerializeField]
     private UpgradableItem swordItem;
     [SerializeField]
-    private GameObject sword;
-    [SerializeField]
-    private List<GameObject> enemies;
-    [SerializeField]
     private GameObject pausePanel;
     [SerializeField]
     private Canvas settingsPanel;
 
     private bool pauseMenuOpen;
     private bool settingsOpen;
-    private List<bool> enemiesActiveBefore = new List<bool>();
+    public List<bool> enemiesActiveBefore = new List<bool>();
     private MeleeAttackManager[] swordLevels;
     private PlayerManager playerManager;
+    private GameObject sword;
+    private GameObject enemyContainer;
+    public List<GameObject> enemies;
 
     void Start()
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
         pausePanel.SetActive(false);
         pauseMenuOpen = false;
         settingsOpen = false;
+
         playerManager = PlayerManager.instance.gameObject.GetComponent<PlayerManager>();
+        sword = GameObject.FindWithTag("Sword");
         swordLevels = sword.GetComponentsInChildren<MeleeAttackManager>();
+        enemyContainer = GameObject.FindWithTag("EnemyContainer");
         
-        foreach (var enemy in enemies) {
+        for (int i = 0; i < enemyContainer.transform.childCount; i++) {
+            enemies.Add(enemyContainer.transform.GetChild(i).gameObject);
+        }
+
+        foreach (GameObject enemy in enemies) {
             enemiesActiveBefore.Add(enemy.activeSelf);
         }
     }
@@ -61,16 +70,16 @@ public class PauseMenu : MonoBehaviour
 
             swordLevels[swordItem.currentLevel].enabled = false;
             Cursor.lockState = CursorLockMode.None;
-            Debug.Log("Closed pause menu");
+            Debug.Log("Open pause menu");
         } else
         {
             for (int i = 0; i < enemiesActiveBefore.Count; i++) {
                 enemies[i].SetActive(enemiesActiveBefore[i]);
             }
 
-            swordLevels[swordItem.currentLevel].enabled = true;;
+            swordLevels[swordItem.currentLevel].enabled = true;
             Cursor.lockState = CursorLockMode.Locked;
-            Debug.Log("Opened pause menu");
+            Debug.Log("Closed pause menu");
         }
     }
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -28,6 +29,8 @@ public class InventoryManager : MonoBehaviour
 
 
     void Start() {
+        EditorUtility.SetDirty(chestsInLevel);
+
         selected = null;
 
         if (Dialogue.instance.isTutorial)

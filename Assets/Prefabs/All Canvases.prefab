@@ -2281,6 +2281,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ff944128e8ee984386e376873b01b77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swordItem: {fileID: 11400000, guid: 6dfaf9fc41635e942b0e359464f46daf, type: 2}
+  sword: {fileID: 0}
   enemies: []
   pausePanel: {fileID: 420650518861737901}
   settingsPanel: {fileID: 3467129056336794172}
@@ -11704,7 +11706,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77aea266be1dc4848a45f1fabcc1f3aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   inventoryStorage: {fileID: 11400000, guid: 6aa851ac3aed8f542b7be8687104304d, type: 2}
   titleTMP: {fileID: 5229180775611709868}
   descriptionTMP: {fileID: 5229180775690306056}
