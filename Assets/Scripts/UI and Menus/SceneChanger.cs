@@ -11,18 +11,37 @@ public class SceneChanger : MonoBehaviour
     private int sceneToEnter;
     [SerializeField]
     private int endScreen;
+    [SerializeField]
+    private bool isDomeGate;
+    [SerializeField]
+    private UpgradableItem robot;
+    [SerializeField]
+    private GameObject text;
     
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("real");
         if (other.gameObject.tag == "Player")
         {
             if (gameEnd) { 
                 SceneManager.LoadScene(endScreen);
-            } else
+            } else if (!isDomeGate)
             {
                 SceneManager.LoadScene(sceneToEnter);
+            } else if (robot.InFinalLevel())
+            {
+                SceneManager.LoadScene(sceneToEnter);
+            } else
+            {
+                text.SetActive(true);
             }
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            text.SetActive(false);
         }
     }
 }

@@ -10,8 +10,6 @@ public class AudioSettings : MonoBehaviour
     private Slider volumeSlider;
 
     void Start() {
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
         volumeSlider.value = SettingsManager.volumes["master"];
     }
 

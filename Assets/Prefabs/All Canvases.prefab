@@ -2282,8 +2282,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swordItem: {fileID: 11400000, guid: 6dfaf9fc41635e942b0e359464f46daf, type: 2}
-  sword: {fileID: 0}
-  enemies: []
   pausePanel: {fileID: 420650518861737901}
   settingsPanel: {fileID: 3467129056336794172}
 --- !u!1 &3916469135182680726
@@ -12296,12 +12294,24 @@ MonoBehaviour:
   canType: 0
   dialogueTexts: {fileID: 0}
   domeEnemiesKilled: 0
-  endingLines: []
+  endingLines:
+  - Great work! I knew you could do it, saw the potential.
+  - "But I believe now\u2019s the time I reveal everything."
+  - "You see, you don't belong here. This isn't the place where you\u2019re from."
+  - To escape from this place, you need a high energy source.
+  - And the only way you were gonna get that is by upgrading me to my Max level.
+  - Now that you have accomplished that, you have to end me now and take up my energy
+    source.
+  - "And leave this place forever\u2026(through the portal)"
+  - Yeah.. I know.
+  - Alright then, Farewell, my friend..
+  - Would like to tear up but for some reason I cannot.
+  - Goodbye.
   sceneChanger: {fileID: 0}
   isTutorial: 0
   tutorialEnemy: {fileID: 0}
   textComp: {fileID: 8396100341550221908}
-  textSpeed: 0.1
+  textSpeed: 0.02
 --- !u!1 &6647590043267416080
 GameObject:
   m_ObjectHideFlags: 0

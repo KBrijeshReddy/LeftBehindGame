@@ -6,8 +6,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Upgradable Item", menuName = "Inventory/Upgradable Item")]
 public class UpgradableItem : ScriptableObject
 {
-   
-
     public int currentLevel;
 
     [SerializeField]

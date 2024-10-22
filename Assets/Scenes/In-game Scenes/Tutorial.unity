@@ -4244,8 +4244,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameEnd: 0
-  sceneToEnter: 6
-  endScreen: 0
+  sceneToEnter: 5
+  endScreen: 7
+  isDomeGate: 0
+  robot: {fileID: 0}
+  text: {fileID: 0}
 --- !u!65 &958686413
 BoxCollider:
   m_ObjectHideFlags: 0

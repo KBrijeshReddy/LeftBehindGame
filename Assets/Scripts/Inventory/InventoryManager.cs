@@ -26,6 +26,8 @@ public class InventoryManager : MonoBehaviour
     private List<UpgradableItem> upgradableItems;
     [SerializeField]
     private List<DialogueTexts> allDialogueTexts;
+    [SerializeField]
+    private List<ChestsInLevel> allChestsInLevels;
 
 
     void Start() {
@@ -42,8 +44,8 @@ public class InventoryManager : MonoBehaviour
         inventoryStorage.items.Clear();
         inventoryStorage.counts.Clear();
 
-        for (int i = 0; i < chestsInLevel.wasCollected.Count; i++) {
-            chestsInLevel.wasCollected[i] = false;
+        foreach (ChestsInLevel level in allChestsInLevels) {
+            level.ResetChests();
         }
 
         foreach (var upgradableItem in upgradableItems) {

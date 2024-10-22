@@ -14,26 +14,22 @@ public class PauseMenu : MonoBehaviour
     private bool pauseMenuOpen;
     private bool settingsOpen;
     private List<bool> enemiesActiveBefore = new List<bool>();
-    private MeleeAttackManager[] swordLevels;
+    public List<MeleeAttackManager> swordLevels;
     private PlayerManager playerManager;
     private GameObject sword;
     private GameObject enemyContainer;
-    private List<GameObject> enemies;
+    public List<GameObject> enemies;
 
     void Start()
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-
         pausePanel.SetActive(false);
         pauseMenuOpen = false;
         settingsOpen = false;
 
         playerManager = PlayerManager.instance.gameObject.GetComponent<PlayerManager>();
         sword = GameObject.FindWithTag("Sword");
-        swordLevels = sword.GetComponentsInChildren<MeleeAttackManager>();
+        swordLevels = new List<MeleeAttackManager>(sword.GetComponentsInChildren<MeleeAttackManager>(true));
         enemyContainer = GameObject.FindWithTag("EnemyContainer");
-        
         for (int i = 0; i < enemyContainer.transform.childCount; i++) {
             enemies.Add(enemyContainer.transform.GetChild(i).gameObject);
         }

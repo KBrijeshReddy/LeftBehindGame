@@ -44,13 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdeaf1d1bce9fa1488a3f0bf7fec1708, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selected: {fileID: 0}
-  nearTrader: 0
-  nearChest: 0
-  nearUpgrader: 0
-  chestID: 0
-  inventoryStorage: {fileID: 11400000, guid: 6aa851ac3aed8f542b7be8687104304d, type: 2}
   chestsInLevel: {fileID: 11400000, guid: b6747975ef6b5ab45914355781144834, type: 2}
+  inventoryStorage: {fileID: 11400000, guid: 6aa851ac3aed8f542b7be8687104304d, type: 2}
   upgradableItems:
   - {fileID: 11400000, guid: 9a253f530da90d44d99da273217793c9, type: 2}
   - {fileID: 11400000, guid: 6dfaf9fc41635e942b0e359464f46daf, type: 2}
@@ -61,3 +56,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 786ad52cf1953a54fb7b307dba7082be, type: 2}
   - {fileID: 11400000, guid: 853dae6a481751d479689f7fcbeb0748, type: 2}
   - {fileID: 11400000, guid: 60fdd35ab8539354db20fe5487b1bb55, type: 2}
+  allChestsInLevels:
+  - {fileID: 11400000, guid: ce854e2e674b0ff40b96435d61ecc1e1, type: 2}
+  - {fileID: 11400000, guid: 2400fa76d31160c4a8af18ff77449435, type: 2}
+  - {fileID: 11400000, guid: 05806da6c9d99664a9fb03928639cb06, type: 2}
+  - {fileID: 11400000, guid: 45016cee7d74447419089c9be47a54be, type: 2}
+  - {fileID: 11400000, guid: 84920359803d51d448f74313253c86d9, type: 2}
+  - {fileID: 11400000, guid: 2dac7b61d5b56414bb4c9cd40a6bf0b9, type: 2}
