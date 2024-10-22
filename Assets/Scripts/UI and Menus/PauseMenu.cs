@@ -13,12 +13,12 @@ public class PauseMenu : MonoBehaviour
 
     private bool pauseMenuOpen;
     private bool settingsOpen;
-    public List<bool> enemiesActiveBefore = new List<bool>();
+    private List<bool> enemiesActiveBefore = new List<bool>();
     private MeleeAttackManager[] swordLevels;
     private PlayerManager playerManager;
     private GameObject sword;
     private GameObject enemyContainer;
-    public List<GameObject> enemies;
+    private List<GameObject> enemies;
 
     void Start()
     {
