@@ -20,8 +20,9 @@ public class PauseMenu : MonoBehaviour
     private GameObject enemyContainer;
     public List<GameObject> enemies;
 
-    void Start()
+    async void Start()
     {
+
         pausePanel.SetActive(false);
         pauseMenuOpen = false;
         settingsOpen = false;

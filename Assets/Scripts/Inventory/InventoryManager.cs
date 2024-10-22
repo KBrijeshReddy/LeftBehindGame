@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
+//using UnityEditor;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -31,7 +31,7 @@ public class InventoryManager : MonoBehaviour
 
 
     void Start() {
-        EditorUtility.SetDirty(chestsInLevel);
+        //EditorUtility.SetDirty(chestsInLevel);
 
         selected = null;
 

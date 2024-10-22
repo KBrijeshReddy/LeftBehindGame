@@ -15,7 +15,11 @@ public class MenuButtons : MonoBehaviour
     [SerializeField]
     private int checkPointSceneNumber;
 
-
+    void Start()
+    {
+        Cursor.visible= true;
+        Cursor.lockState= CursorLockMode.None;
+    }
     public void PlayGame()
     {
         SceneManager.LoadScene(tutorialSceneNumber);
