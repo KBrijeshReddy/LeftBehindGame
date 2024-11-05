@@ -24,6 +24,8 @@ public class Dialogue : MonoBehaviour
     [SerializeField]
     private List<string> endingLines;
     [SerializeField]
+    private List<string> postEndingLines;
+    [SerializeField]
     private SceneChanger sceneChanger;
     public bool isTutorial;
     [SerializeField]
@@ -111,6 +113,7 @@ public class Dialogue : MonoBehaviour
             if (domeEnemiesKilled == 7)
             {
                 sceneChanger.gameEnd = true;
+                UpdateDialogue(postEndingLines);
             } else if (isTutorial)
             {
                 tutorialEnemy.SetActive(true);

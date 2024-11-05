@@ -1858,6 +1858,7 @@ MonoBehaviour:
   creditsSceneNumber: 0
   mainMenuSceneNumber: 0
   checkPointSceneNumber: 6
+  inMainMenu: 0
 --- !u!1 &3404710279754494488
 GameObject:
   m_ObjectHideFlags: 0
@@ -12309,6 +12310,8 @@ MonoBehaviour:
   - Alright then, Farewell, my friend..
   - Would like to tear up but for some reason I cannot.
   - Goodbye.
+  postEndingLines:
+  - Go.
   sceneChanger: {fileID: 0}
   isTutorial: 0
   tutorialEnemy: {fileID: 0}
