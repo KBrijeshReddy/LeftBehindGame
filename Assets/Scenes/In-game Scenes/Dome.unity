@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0010416221, g: 0.02184189, b: 0.4050226, a: 1}
+  m_IndirectSpecularColor: {r: 0.0010416271, g: 0.021841887, b: 0.40502262, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -152,7 +152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7343247477884177023, guid: a996ad3aff2a9ea43964a55dbb33b1cd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.981182
+      value: -2.85
       objectReference: {fileID: 0}
     - target: {fileID: 7343247477884177023, guid: a996ad3aff2a9ea43964a55dbb33b1cd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -857,7 +857,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5240812768330528537, guid: ab9ac780f497c594180f2ffe5d773acf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.2611847
+      value: -3.4200015
       objectReference: {fileID: 0}
     - target: {fileID: 5240812768330528537, guid: ab9ac780f497c594180f2ffe5d773acf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -923,7 +923,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5240812768330528537, guid: ab9ac780f497c594180f2ffe5d773acf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.2611847
+      value: -3.07
       objectReference: {fileID: 0}
     - target: {fileID: 5240812768330528537, guid: ab9ac780f497c594180f2ffe5d773acf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1011,6 +1011,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 197368853}
     m_Modifications:
+    - target: {fileID: 2418312156767749677, guid: bebe9f29ec3970d4cb6f6d26072a356c, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2975514701867309335, guid: bebe9f29ec3970d4cb6f6d26072a356c, type: 3}
       propertyPath: inDome
       value: 1
@@ -1018,6 +1022,10 @@ PrefabInstance:
     - target: {fileID: 2975514701867309335, guid: bebe9f29ec3970d4cb6f6d26072a356c, type: 3}
       propertyPath: inMainMenu
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6848407500903283191, guid: bebe9f29ec3970d4cb6f6d26072a356c, type: 3}
+      propertyPath: Loop
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8270531415190408595, guid: bebe9f29ec3970d4cb6f6d26072a356c, type: 3}
       propertyPath: m_Name
@@ -2014,7 +2022,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameEnd: 0
   sceneToEnter: 4
-  domeScene: 5
+  endScreen: 0
+  isDomeGate: 0
+  robot: {fileID: 0}
+  text: {fileID: 0}
 --- !u!65 &1417612850
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2394,7 +2405,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5240812768330528537, guid: ab9ac780f497c594180f2ffe5d773acf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.5411835
+      value: -3.89
       objectReference: {fileID: 0}
     - target: {fileID: 5240812768330528537, guid: ab9ac780f497c594180f2ffe5d773acf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2465,7 +2476,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5240812768330528537, guid: ab9ac780f497c594180f2ffe5d773acf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.5411835
+      value: -3.31
       objectReference: {fileID: 0}
     - target: {fileID: 5240812768330528537, guid: ab9ac780f497c594180f2ffe5d773acf, type: 3}
       propertyPath: m_LocalPosition.z

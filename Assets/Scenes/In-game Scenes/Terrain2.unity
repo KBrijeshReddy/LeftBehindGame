@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.08571599, g: 0.0738348, b: 0.104631074, a: 1}
+  m_IndirectSpecularColor: {r: 0.085716024, g: 0.073834814, b: 0.10463123, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1539,6 +1539,7 @@ GameObject:
   - component: {fileID: 421843379}
   - component: {fileID: 421843378}
   - component: {fileID: 421843377}
+  - component: {fileID: 421843380}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -1624,6 +1625,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 421843375}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!208 &421843380
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421843375}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &426923275
 GameObject:
   m_ObjectHideFlags: 0
@@ -1671,7 +1688,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameEnd: 0
   sceneToEnter: 6
-  domeScene: 0
+  endScreen: 0
+  isDomeGate: 0
+  robot: {fileID: 0}
+  text: {fileID: 0}
 --- !u!65 &426923278
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7720,6 +7740,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2134332465}
   - component: {fileID: 2134332466}
+  - component: {fileID: 2134332467}
   m_Layer: 0
   m_Name: GameObject (37)
   m_TagString: Untagged
@@ -7755,6 +7776,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!208 &2134332467
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134332464}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!33 &215592837731075206
 MeshFilter:
   m_ObjectHideFlags: 0
