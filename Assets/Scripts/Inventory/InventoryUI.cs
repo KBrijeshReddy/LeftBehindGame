@@ -59,7 +59,7 @@ public class InventoryUI : MonoBehaviour
             ToggleInventory(true);
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+        if (Input.GetKeyDown(KeyCode.Escape) && !PauseMenu.pauseMenuOpen) {
             ToggleInventory(false);
         }
     }

@@ -2284,6 +2284,8 @@ MonoBehaviour:
   swordItem: {fileID: 11400000, guid: 6dfaf9fc41635e942b0e359464f46daf, type: 2}
   pausePanel: {fileID: 420650518861737901}
   settingsPanel: {fileID: 3467129056336794172}
+  swordLevels: []
+  enemies: []
 --- !u!1 &3916469135182680726
 GameObject:
   m_ObjectHideFlags: 0

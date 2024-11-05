@@ -14,12 +14,17 @@ public class MenuButtons : MonoBehaviour
     private int mainMenuSceneNumber;
     [SerializeField]
     private int checkPointSceneNumber;
+    [SerializeField]
+    private bool inMainMenu;
 
     void Start()
     {
-        Cursor.visible= true;
-        Cursor.lockState= CursorLockMode.None;
+        if (inMainMenu) {
+            Cursor.visible= true;
+            Cursor.lockState= CursorLockMode.None;
+        }
     }
+
     public void PlayGame()
     {
         SceneManager.LoadScene(tutorialSceneNumber);

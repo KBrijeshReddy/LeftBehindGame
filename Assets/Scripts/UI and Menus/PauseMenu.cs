@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
+    public static bool pauseMenuOpen;
+
+
     [SerializeField]
     private UpgradableItem swordItem;
     [SerializeField]
@@ -11,7 +14,6 @@ public class PauseMenu : MonoBehaviour
     [SerializeField]
     private Canvas settingsPanel;
 
-    private bool pauseMenuOpen;
     private bool settingsOpen;
     private List<bool> enemiesActiveBefore = new List<bool>();
     public List<MeleeAttackManager> swordLevels;
@@ -22,7 +24,6 @@ public class PauseMenu : MonoBehaviour
 
     async void Start()
     {
-
         pausePanel.SetActive(false);
         pauseMenuOpen = false;
         settingsOpen = false;
