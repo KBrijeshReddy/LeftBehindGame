@@ -38,7 +38,8 @@ public class MeleeAttackManager : MonoBehaviour
     async void Attack(int attackNum) {
         PlayerManager.instance.inCombat = true;
         PlayerManager.instance.isAttacking = true;
-        Debug.Log("Performing attack " + attackNum);
+        Debug.Log("Performing attack " + (attackNum+1));
+        SettingsManager.instance.PlaySound("saber swing " + (attackNum+1), transform);
         attackHits[attackNum] = Instantiate(attackFabs[attackNum], attackPos[attackNum].transform.position, attackPos[attackNum].transform.rotation);
         attackAnims[attackNum] = true;
         anim.SetBool(animSetBools[attackNum], true);

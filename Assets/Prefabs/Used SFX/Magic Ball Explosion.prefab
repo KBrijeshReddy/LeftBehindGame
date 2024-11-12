@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5308494626122350235}
   - component: {fileID: 1682665287504571184}
   m_Layer: 0
-  m_Name: Magic-Ball-Explosion
+  m_Name: Magic Ball Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -295,7 +295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  sound: enemy3
+  sound: enemy level 3 death
   loot: {fileID: 11400000, guid: 44d4235d1b723f74f8de7a491fcf39a7, type: 2}
   objectToDestroy: {fileID: 4936765075259376158}
   particle: {fileID: 4593184484909914552, guid: 2e1e9506f5904a64b81744324fb7cd50, type: 3}

@@ -13,6 +13,8 @@ TagManager:
   - enemy
   - Sword
   - EnemyContainer
+  - RobotMeshChanger
+  - SwordMeshChanger
   layers:
   - Default
   - TransparentFX

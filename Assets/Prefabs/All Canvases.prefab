@@ -913,16 +913,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathAnim: {fileID: 0}
   blackoutAnim: {fileID: 8872408896772297279}
+  robot: {fileID: 11400000, guid: 9a253f530da90d44d99da273217793c9, type: 2}
   deathScreen: 8
   tutorialScene: 1
   energyBar: {fileID: 4639310326810471141}
   healthBar: {fileID: 817988566047521862}
   healthText: {fileID: 3738029127338321898}
   maxHealth: 100
-  healAmount: 25
-  energyDecreaseRate: 0.5
-  energyIncreaseProportion: 1
   lerpSpeed: 2
+  abilities:
+  - heal
+  - magic ball
+  - ground smash
+  energyRequired:
+  - 20
+  - 30
+  - 35
+  healthHealed: 20
+  energyIncreaseProportion: 0.75
 --- !u!1 &1961118647841582146
 GameObject:
   m_ObjectHideFlags: 0
@@ -8285,6 +8293,7 @@ MonoBehaviour:
   upgradeButton: {fileID: 5229180775977468607}
   panelStuff: {fileID: 5229180775731439735}
   finalIcon: {fileID: 5229180775961445294}
+  meshChangerTag: SwordMeshChanger
   enabledColor: '#6BFF00'
   disabledColor: '#FF9494'
 --- !u!1 &5229180775764108193
@@ -8812,6 +8821,7 @@ MonoBehaviour:
   upgradeButton: {fileID: 5229180775037678850}
   panelStuff: {fileID: 5229180776348087117}
   finalIcon: {fileID: 5229180776540370850}
+  meshChangerTag: RobotMeshChanger
   enabledColor: '#6BFF00'
   disabledColor: '#FF9494'
 --- !u!1 &5229180775959027985

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Common Chest 1
   m_EditorClassIdentifier: 
   items:
+  - {fileID: 11400000, guid: a1c1456713879974db921451cc4822de, type: 2}
   - {fileID: 0}
-  - {fileID: 11400000, guid: 8f8c0835819f6ff45afbe1aa26f34452, type: 2}
   - {fileID: 11400000, guid: ee6c893ed3361c042bc0d646b23fe2c3, type: 2}
   - {fileID: 0}
-  counts: 00000000010000000500000000000000
+  counts: 01000000000000000500000000000000

@@ -24,6 +24,8 @@ public class PlayerHealthManager : MonoBehaviour
     [SerializeField]
     private Animator blackoutAnim;
     [SerializeField]
+    private UpgradableItem robot;
+    [SerializeField]
     private int deathScreen;
     [SerializeField]
     private int tutorialScene;
@@ -36,13 +38,21 @@ public class PlayerHealthManager : MonoBehaviour
     [SerializeField]
     private float maxHealth;
     [SerializeField]
-    private float healAmount;
+    private float lerpSpeed;
+
+
+    [Header("-----------------Values-----------------")]
     [SerializeField]
-    private float energyDecreaseRate;
+    private List<string> abilities;
+    [SerializeField]
+    private List<float> energyRequired;
+    [SerializeField]
+    private float healthHealed;
     [SerializeField]
     private float energyIncreaseProportion;
-    [SerializeField]
-    private float lerpSpeed;
+
+
+    private float energyIncreaseRate;
 
 
     void Start()
@@ -50,20 +60,20 @@ public class PlayerHealthManager : MonoBehaviour
         maxHealth = 100f;
         energy = maxHealth;
         health = maxHealth;
+        energyIncreaseRate = robot.GetDamage();
         // pp.profile.TryGetSettings(out vig);
     }
 
     void Update()
     {
-        if (energy <= 0) {
-            Debug.Log("Game over(energy became 0)");
-        } else
-        {
-            energy -= energyDecreaseRate * Time.deltaTime;
+        if (energy <= 100) {
+            energy += energyIncreaseRate * Time.deltaTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
-        ConsumeEnergy();
+        if (Input.GetKeyDown(KeyCode.Q) && health < maxHealth) {
+            if (UseEnergy("heal"))
+            TakeDamage(-healthHealed);
+        }
 
         energyBar.fillAmount = Mathf.MoveTowards(energyBar.fillAmount, energy/maxHealth, lerpSpeed * Time.deltaTime);
         healthBar.fillAmount = Mathf.MoveTowards(healthBar.fillAmount, health/maxHealth, lerpSpeed * Time.deltaTime);
@@ -77,7 +87,6 @@ public class PlayerHealthManager : MonoBehaviour
             health= 0; 
             Cursor.lockState = CursorLockMode.None;
             SettingsManager.instance.StopPlaying();
-            // deathAnim.Play("death");
 
             await Task.Delay(500);
             blackoutAnim.Play("blackout");
@@ -95,7 +104,6 @@ public class PlayerHealthManager : MonoBehaviour
         {
             health = maxHealth;
         }
-
 
         // if (health <= 30)
         // {
@@ -120,13 +128,13 @@ public class PlayerHealthManager : MonoBehaviour
         }
     }
 
-    public void ConsumeEnergy() {
-        if (energy < healAmount) {
-            Debug.Log("Can't consume energy");
-            return;
+    public bool UseEnergy(string ability) {
+        float amount = energyRequired[abilities.IndexOf(ability)];
+        if (energy < amount) {
+            Debug.Log("Can't use energy");
+            return false;
         }
-
-        energy -= healAmount;
-        TakeDamage(-healAmount);
+        energy -= amount;
+        return true;
     }
 }

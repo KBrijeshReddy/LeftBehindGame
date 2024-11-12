@@ -29,7 +29,7 @@ public class PauseMenu : MonoBehaviour
         settingsOpen = false;
 
         playerManager = PlayerManager.instance.gameObject.GetComponent<PlayerManager>();
-        sword = GameObject.FindWithTag("Sword");
+        sword = GameObject.FindWithTag("SwordMeshChanger");
         swordLevels = new List<MeleeAttackManager>(sword.GetComponentsInChildren<MeleeAttackManager>(true));
         enemyContainer = GameObject.FindWithTag("EnemyContainer");
         for (int i = 0; i < enemyContainer.transform.childCount; i++) {

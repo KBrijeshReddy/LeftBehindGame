@@ -24,6 +24,8 @@ public class UpgradingUI : MonoBehaviour
     [SerializeField]
     private GameObject finalIcon;
     [SerializeField]
+    private string meshChangerTag;
+    [SerializeField]
     private string enabledColor;
     [SerializeField]
     private string disabledColor;
@@ -34,9 +36,9 @@ public class UpgradingUI : MonoBehaviour
     private UpgradeRequirements reqs;
     private MeshChanger meshChanger;
 
-    void Start()
-    {
-        meshChanger = MeshChanger.instance.gameObject.GetComponent<MeshChanger>();
+
+    void Start() {
+        meshChanger = GameObject.FindWithTag(meshChangerTag).GetComponent<MeshChanger>();
     }
 
     public void UpdateUpgradingUI() {
@@ -72,6 +74,7 @@ public class UpgradingUI : MonoBehaviour
             InventoryManager.instance.Decrease(upgradableItem.GetItemRequirements().items[i], upgradableItem.GetItemRequirements().counts[i]);
             Debug.Log(upgradableItem.GetItemRequirements().items[i] + " : " + upgradableItem.GetItemRequirements().counts[i]);
         }
+        SettingsManager.instance.PlaySound("level up", transform);
         upgradableItem.CompleteUpgrade();
         UpdateUpgradingUI();
         meshChanger.UpdateMesh();

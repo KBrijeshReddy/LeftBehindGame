@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class MeshChanger : MonoBehaviour
 {
-    public static MeshChanger instance; void Awake() { instance = this; }
-
     [SerializeField]
     private GameObject[] meshes;
     [SerializeField]

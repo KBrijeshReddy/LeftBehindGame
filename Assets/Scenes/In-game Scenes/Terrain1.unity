@@ -459,6 +459,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PetRobot
       objectReference: {fileID: 0}
+    - target: {fileID: 7821443015708229550, guid: 748bb4f30e713f748aa9c37a508958bc, type: 3}
+      propertyPath: m_TagString
+      value: RobotMeshChanger
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 748bb4f30e713f748aa9c37a508958bc, type: 3}
 --- !u!4 &80212909 stripped
@@ -5942,7 +5946,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6463166259877066580, guid: 7836cb4ef61fd3344a064895c3f95481, type: 3}
       propertyPath: m_TagString
-      value: Sword
+      value: SwordMeshChanger
       objectReference: {fileID: 0}
     - target: {fileID: 6676124803241411848, guid: 7836cb4ef61fd3344a064895c3f95481, type: 3}
       propertyPath: m_RootOrder
@@ -7587,7 +7591,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameEnd: 0
   sceneToEnter: 6
-  domeScene: 0
+  endScreen: 0
+  isDomeGate: 0
+  robot: {fileID: 0}
+  text: {fileID: 0}
 --- !u!65 &2145396077
 BoxCollider:
   m_ObjectHideFlags: 0

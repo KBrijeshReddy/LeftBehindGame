@@ -30,6 +30,7 @@ public class MagicBall : MonoBehaviour
         if (other.gameObject.tag != "Player")
         {
             SplashItUp();
+            SettingsManager.instance.PlaySound("magic ball explosion", transform);
             Instantiate(particle, parent.transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

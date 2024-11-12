@@ -452,6 +452,14 @@ PrefabInstance:
       propertyPath: inMainMenu
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2975514701867309335, guid: bebe9f29ec3970d4cb6f6d26072a356c, type: 3}
+      propertyPath: sound2.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975514701867309335, guid: bebe9f29ec3970d4cb6f6d26072a356c, type: 3}
+      propertyPath: sound2.Array.data[9]
+      value: 
+      objectReference: {fileID: 8952097920686542588, guid: 96463948f4389ce478c66e16b5370457, type: 3}
     - target: {fileID: 8270531415190408595, guid: bebe9f29ec3970d4cb6f6d26072a356c, type: 3}
       propertyPath: m_Name
       value: SettingsManager

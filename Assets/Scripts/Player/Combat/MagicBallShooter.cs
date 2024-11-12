@@ -35,7 +35,7 @@ public class MagicBallShooter : MonoBehaviour
         // Update the timer based on time passed
 
         // Check if the player presses the shoot button (P key) and can shoot
-        if (Input.GetMouseButtonDown(1) && readyToThrow && !PlayerManager.instance.isAttacking)
+        if (Input.GetMouseButtonDown(1) && readyToThrow && !PlayerManager.instance.isAttacking && PlayerHealthManager.instance.UseEnergy("magic ball"))
         {
             ShootTheBall();
             // Debug.Log("shot the ball");
@@ -48,6 +48,7 @@ public class MagicBallShooter : MonoBehaviour
 
     void ShootTheBall()
     {
+        SettingsManager.instance.PlaySound("magic ball throwing", transform);
         readyToThrow = false;
         GameObject bullet = Instantiate(magicBall, shootPoint.position, Cam.rotation);
         Debug.Log("Is shooting");

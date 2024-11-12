@@ -446,7 +446,21 @@ MonoBehaviour:
   - {fileID: 438016533526744698, guid: 9823643449f7b58429e9749e3ab91217, type: 3}
   - {fileID: 1615892465507222974, guid: f3b10b137f1580740ac5c91f80f2aacb, type: 3}
   - {fileID: 8789914614101509132, guid: 2a264b3834379634b9dd49e4c99080b7, type: 3}
+  - {fileID: 6296154778985459013, guid: 620a1b0838ccba24e998b43b508c315e, type: 3}
+  - {fileID: 2167776946556288503, guid: 5a3ba5fe7a722b445ba69e7b9d263d3a, type: 3}
+  - {fileID: 3449023440181203251, guid: be7b7ac7f95e5e0498fc077f49980800, type: 3}
+  - {fileID: 7177193335376688015, guid: f3936e4d5565f5042af5d870bab71e14, type: 3}
+  - {fileID: 3070094126200890562, guid: 4c0dab6f27edfc043b031fb05013a1bc, type: 3}
+  - {fileID: 5511763828030543399, guid: 71f403da417404442a42599bf441cf0d, type: 3}
+  - {fileID: 8952097920686542588, guid: 96463948f4389ce478c66e16b5370457, type: 3}
   sound2Names:
-  - enemy1
-  - enemy2
-  - enemy3
+  - enemy level 1 death
+  - enemy level 2 death
+  - enemy level 3 death
+  - magic ball throwing
+  - magic ball explosion
+  - ground smash
+  - saber swing 1
+  - saber swing 2
+  - saber swing 3
+  - level up
