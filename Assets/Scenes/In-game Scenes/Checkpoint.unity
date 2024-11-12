@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0016490228, g: 0.0012047319, b: 0.004924006, a: 1}
+  m_IndirectSpecularColor: {r: 0.0016490174, g: 0.0012047285, b: 0.0049239844, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -737,7 +737,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameEnd: 0
   sceneToEnter: 2
-  domeScene: 0
+  endScreen: 0
+  isDomeGate: 0
+  robot: {fileID: 0}
+  text: {fileID: 0}
 --- !u!65 &268449715
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1557,6 +1560,7 @@ Transform:
   - {fileID: 830159476}
   - {fileID: 1356319}
   - {fileID: 803000072}
+  - {fileID: 1337697814}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2551,6 +2555,56 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1252626188}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1337697813
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1337697814}
+  - component: {fileID: 1337697815}
+  m_Layer: 0
+  m_Name: SuperSecretGameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1337697814
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337697813}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 811022183}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1337697815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337697813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b409f2b2388636444897b1b4ed2ed56c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 11400000, guid: ee6c893ed3361c042bc0d646b23fe2c3, type: 2}
+  - {fileID: 11400000, guid: f8386b69b50abdf4381aa5e3d7ac9def, type: 2}
+  - {fileID: 11400000, guid: e6137ca489ba62b40b96610ba07adc72, type: 2}
+  - {fileID: 11400000, guid: 8f8c0835819f6ff45afbe1aa26f34452, type: 2}
+  - {fileID: 11400000, guid: a1c1456713879974db921451cc4822de, type: 2}
 --- !u!1 &1543655054
 GameObject:
   m_ObjectHideFlags: 0
@@ -3042,7 +3096,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameEnd: 0
   sceneToEnter: 4
-  domeScene: 0
+  endScreen: 0
+  isDomeGate: 0
+  robot: {fileID: 0}
+  text: {fileID: 0}
 --- !u!65 &1694618528
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3450,7 +3507,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameEnd: 0
   sceneToEnter: 3
-  domeScene: 0
+  endScreen: 0
+  isDomeGate: 0
+  robot: {fileID: 0}
+  text: {fileID: 0}
 --- !u!65 &2137424414
 BoxCollider:
   m_ObjectHideFlags: 0

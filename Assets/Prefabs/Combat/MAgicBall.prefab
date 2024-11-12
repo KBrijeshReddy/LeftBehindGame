@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeTime: 7.5
   damageRadius: 5
-  damage: 55
+  damage: 40
   particle: {fileID: 8166464371488257743, guid: 7ad9e5c11953c4744a37b08112de9169, type: 3}
   parent: {fileID: 4835121118352195519}
 --- !u!54 &-5254662790143947840
