@@ -11,7 +11,9 @@ public class EnemyHealthManager : MonoBehaviour
 
 
     [SerializeField]
-    private string sound;
+    private string deathSFX;
+    [SerializeField]
+    private string damageSFX;
     [SerializeField]
     private EnemyLoot loot;
     [SerializeField]
@@ -22,10 +24,6 @@ public class EnemyHealthManager : MonoBehaviour
     private GameObject parent;
     [SerializeField]
     private float maxHealth;
-
-    [Header("-------------Scene-specific-------------")]
-    [SerializeField]
-    private bool inDome;
 
     [Header("-----------------Preset-----------------")]
     [SerializeField]
@@ -49,16 +47,19 @@ public class EnemyHealthManager : MonoBehaviour
 
         if (health <= 0) {
             Instantiate(particle, parent.transform.position, Quaternion.identity);
-            SettingsManager.instance.PlaySound(sound, transform);
+            SettingsManager.instance.PlaySound(deathSFX, transform);
 
             for (int i = 0; i < loot.items.Count; i++) {
                 InventoryManager.instance.Increase(loot.items[i], loot.counts[i]);
             }
 
-            if (inDome)
+            if (SceneNameHolder.scene == "dome")
             Dialogue.instance.domeEnemiesKilled += 1;
 
             Destroy(gameObject);
+        } else
+        {
+            SettingsManager.instance.PlaySound(damageSFX, transform);
         }
     }
 }

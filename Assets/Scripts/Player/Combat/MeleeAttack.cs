@@ -7,13 +7,25 @@ public class MeleeAttack : MonoBehaviour
 {
     [SerializeField]
     private UpgradableItem sword;
+    [SerializeField]
+    private float knockback;
+    private GameObject player;
+    private GameObject enemy;
+
+    void Start()
+    {
+        player = GameObject.FindWithTag("Player");
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Enemy")
         {
+            enemy = other.gameObject;
             Debug.Log(sword.GetDamage() + " damage dealt to enemy");
-            other.gameObject.GetComponent<EnemyHealthManager>().TakeDamage(sword.GetDamage());
+            enemy.GetComponent<EnemyHealthManager>().TakeDamage(sword.GetDamage());
+           
+            Debug.Log("knockbacked");
             PlayerHealthManager.instance.RegenerateEnergy(sword.GetDamage());
         }
     }

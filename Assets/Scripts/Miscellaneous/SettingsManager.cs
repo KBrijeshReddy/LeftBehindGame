@@ -4,18 +4,10 @@ using UnityEngine;
 
 public class SettingsManager : MonoBehaviour
 {
-    public static SettingsManager instance; void Awake() { instance = this; }
+    public static SettingsManager instance;
     public static Dictionary<string, float> volumes;
     public static float mouseSens;
 
-
-    [Header("-------------Scene-specific-------------")]
-    [SerializeField]
-    private bool inMainMenu;
-    [SerializeField]
-    private bool inDome;
-    [SerializeField]
-    private bool inGame;
 
     [Header("-----------------Preset-----------------")]
     [SerializeField]
@@ -27,30 +19,41 @@ public class SettingsManager : MonoBehaviour
     [SerializeField]
     private List<string> sound2Names;
 
+    public bool firstScene;
 
-    void Start() {
-        if (inMainMenu) {
-            ResetSettings();
+    void Awake()
+    {
+        instance = this;
+        firstScene = true;
+    }
+
+    public void ManageMusic() {
+        ReturnMusic("walking").Stop();
+
+        if (firstScene) {
+            DontDestroyOnLoad(gameObject);
+            firstScene = false;
+            Debug.Log("thing");
         }
 
-        PlayMusic("walking", false);
-
-        if (inDome) {
-            PlayMusic("music", false);
-            PlayMusic("intense music", true);
-        } else if (inGame)
+        if (SceneNameHolder.scene == "main menu") {
+            // DontDestroyOnLoad(gameObject);
+            ResetSettings();
+        } else if (SceneNameHolder.scene == "game end screen" || SceneNameHolder.scene == "death screen") {
+            StopPlaying();
+            return;
+        } else if (SceneNameHolder.scene == "dome") {
+            ReturnMusic("music").Stop();
+            ReturnMusic("intense music").Play();
+        } else if (!ReturnMusic("music").isPlaying)
         {
-            PlayMusic("music", true);
-            PlayMusic("intense music", false);
-        } else
-        {
-            PlayMusic("music", false);
-            PlayMusic("intense music", false);
+            ReturnMusic("music").Play();
+            ReturnMusic("intense music").Stop();
         }
     }
 
-    public void PlayMusic(string name, bool active) {
-        sound1[sound1Names.IndexOf(name)].SetActive(active);
+    public AudioSource ReturnMusic(string name) {
+        return sound1[sound1Names.IndexOf(name)].GetComponent<AudioSource>();
     }
 
     public void PlaySound(string name, Transform pos) {
@@ -58,8 +61,8 @@ public class SettingsManager : MonoBehaviour
     }
 
     public void StopPlaying() {
-        foreach (var sound in sound1) {
-            sound.SetActive(false);
+        foreach (GameObject sound in sound1) {
+            sound.GetComponent<AudioSource>().Stop();
         }
     }
 

@@ -2079,7 +2079,6 @@ MonoBehaviour:
   creditsSceneNumber: 0
   mainMenuSceneNumber: 0
   checkPointSceneNumber: 6
-  inMainMenu: 0
 --- !u!1 &3404710279754494488
 GameObject:
   m_ObjectHideFlags: 0
@@ -12506,6 +12505,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDialougeEnd: 1
   canType: 0
+  clips:
+  - {fileID: 8300000, guid: d5a1409248b9af147bb922ac1eafcb15, type: 3}
+  - {fileID: 8300000, guid: 7de95192c4aad6142b95b01918299866, type: 3}
+  - {fileID: 8300000, guid: bb5ad336b2ebe404daf5a133309d9696, type: 3}
+  - {fileID: 8300000, guid: cc815745bd0c5364796e83e1fb256e35, type: 3}
+  - {fileID: 8300000, guid: e58903828d9a630488a2fa59a268bc6d, type: 3}
+  - {fileID: 8300000, guid: 6ca9209bd9e90834bae2f0d17d0aeff2, type: 3}
+  - {fileID: 8300000, guid: 09cb703f69e610640ac3b63235c7008a, type: 3}
+  - {fileID: 8300000, guid: fd85d504dd82ffd49b7b71dad8b9adff, type: 3}
+  - {fileID: 8300000, guid: ad0854d89518c5e4cb8c6de5ba08b9e0, type: 3}
+  - {fileID: 8300000, guid: a6881e4c616e1444fb42e6d51bee3899, type: 3}
+  - {fileID: 8300000, guid: 739e1cbe4d47e9948b852a69a35bfe16, type: 3}
+  - {fileID: 8300000, guid: ac8162ec8ce64d649b087d8ce81a23af, type: 3}
+  - {fileID: 8300000, guid: 5a348fe171cd2ae4aa24984ff9c44630, type: 3}
+  - {fileID: 8300000, guid: 2b74013585064534e8d75fa4670f4b7d, type: 3}
+  - {fileID: 8300000, guid: ed9bec4d26f9f2043b8a72c9a1e9027c, type: 3}
+  - {fileID: 8300000, guid: 11b6311927e31134c804eee2d5d74424, type: 3}
+  - {fileID: 8300000, guid: 506e8c5a4784c1041aa3dc8f0e194f10, type: 3}
+  - {fileID: 8300000, guid: c36dcc0bcb11b9045a1191d2cfa073a3, type: 3}
+  - {fileID: 8300000, guid: 7411e14303bb70f44bdc21a433d422d3, type: 3}
+  - {fileID: 8300000, guid: 0a49e240571ae34469144128ad0bc240, type: 3}
   dialogueTexts: {fileID: 0}
   domeEnemiesKilled: 0
   endingLines:
@@ -12524,7 +12544,6 @@ MonoBehaviour:
   postEndingLines:
   - Go.
   sceneChanger: {fileID: 0}
-  isTutorial: 0
   tutorialEnemy: {fileID: 0}
   textComp: {fileID: 8396100341550221908}
   textSpeed: 0.02

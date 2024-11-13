@@ -6,11 +6,7 @@ using UnityEngine;
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager instance; void Awake() { instance = this; }
-    public static Dictionary<string, bool> nearInteractors = new Dictionary<string, bool> {
-        {"trader", false},
-        {"chest", false},
-        {"upgrader", false}
-    };
+    public static Dictionary<string, bool> nearInteractors;
     public static int chestID;
     public static Item selected;
 
@@ -33,9 +29,15 @@ public class InventoryManager : MonoBehaviour
     void Start() {
         //EditorUtility.SetDirty(chestsInLevel);
 
+        nearInteractors = new Dictionary<string, bool> {
+            {"trader", false},
+            {"chest", false},
+            {"upgrader", false}
+        };
+
         selected = null;
 
-        if (Dialogue.instance.isTutorial)
+        if (SceneNameHolder.scene == "tutorial")
         ResetValues();
     }
 

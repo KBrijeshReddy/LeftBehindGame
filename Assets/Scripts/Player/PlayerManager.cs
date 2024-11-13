@@ -91,10 +91,10 @@ public class PlayerManager : MonoBehaviour
         }
 
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)) {
-            SettingsManager.instance.PlayMusic("walking", true);
+            SettingsManager.instance.ReturnMusic("walking").Play();
         }
         else {
-            SettingsManager.instance.PlayMusic("walking", false);
+            SettingsManager.instance.ReturnMusic("walking").Stop();
         }
     }
 

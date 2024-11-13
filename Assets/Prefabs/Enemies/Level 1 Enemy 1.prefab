@@ -307,8 +307,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.5013824, y: 5, z: 4.5164547}
-  m_Center: {x: -0.18339473, y: 0, z: -0.24177264}
+  m_Size: {x: 4.842325, y: 5, z: 4.5164547}
+  m_Center: {x: -0.8538679, y: 0, z: -0.2417729}
 --- !u!23 &4934382390061833885
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -378,13 +378,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  sound: enemy level 1 death
+  deathSFX: enemy level 1 death
+  damageSFX: enemy damaged 1
   loot: {fileID: 11400000, guid: 5dec4e2ce2d8767459ef5c15f0a20198, type: 2}
   objectToDestroy: {fileID: 5240812768330528542}
   particle: {fileID: 7040446181027560177, guid: 43b3695728ff5b547b64cf418b9c86bd, type: 3}
   parent: {fileID: 1268101519858725575}
   maxHealth: 80
-  inDome: 0
   lerpSpeed: 2
   healthBar: {fileID: 5240812768181309531}
 --- !u!1 &5240812768181309529
@@ -474,7 +474,6 @@ GameObject:
   - component: {fileID: 5240812768330528537}
   - component: {fileID: 5240812768330528536}
   - component: {fileID: 5240812768330528539}
-  - component: {fileID: -6284805385634574132}
   m_Layer: 0
   m_Name: Level 1 Enemy 1
   m_TagString: Untagged
@@ -512,7 +511,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 3
+  m_StoppingDistance: 9
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -533,19 +532,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBot: 0
---- !u!135 &-6284805385634574132
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5240812768330528542}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5240812769009105786
 GameObject:
   m_ObjectHideFlags: 0

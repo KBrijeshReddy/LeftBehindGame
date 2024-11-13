@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &366240292814615136
+--- !u!1 &8130126943439791295
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3140083581392122882}
-  - component: {fileID: 5583403994830693092}
+  - component: {fileID: 3971633014044718936}
+  - component: {fileID: 6072738757183496146}
   m_Layer: 0
-  m_Name: Robot-dmg-1
+  m_Name: Enemy Damaged 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3140083581392122882
+--- !u!4 &3971633014044718936
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 366240292814615136}
+  m_GameObject: {fileID: 8130126943439791295}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,17 +32,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &5583403994830693092
+--- !u!82 &6072738757183496146
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 366240292814615136}
+  m_GameObject: {fileID: 8130126943439791295}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8d690efcc4f17ac49bac13a272d790c3, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4275f8af76f58444ea9fbedf188e934e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
