@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading.Tasks;
 
 public class SettingsManager : MonoBehaviour
 {
@@ -27,17 +28,20 @@ public class SettingsManager : MonoBehaviour
         firstScene = true;
     }
 
-    public void ManageMusic() {
+    public async void ManageMusic() {
+        Debug.Log("got ran");
         ReturnMusic("walking").Stop();
 
         if (firstScene) {
             DontDestroyOnLoad(gameObject);
+            await Task.Delay(1500);
             firstScene = false;
             Debug.Log("thing");
         }
 
         if (SceneNameHolder.scene == "main menu") {
-            // DontDestroyOnLoad(gameObject);
+            ReturnMusic("music").Stop();
+            ReturnMusic("intense music").Stop();
             ResetSettings();
         } else if (SceneNameHolder.scene == "game end screen" || SceneNameHolder.scene == "death screen") {
             StopPlaying();

@@ -13,8 +13,11 @@ public class PauseMenu : MonoBehaviour
     private GameObject pausePanel;
     [SerializeField]
     private Canvas settingsPanel;
+    [SerializeField]
+    private Canvas controlsPanel;
 
     private bool settingsOpen;
+    private bool controlsOpen;
     private List<bool> enemiesActiveBefore = new List<bool>();
     public List<MeleeAttackManager> swordLevels;
     private PlayerManager playerManager;
@@ -27,6 +30,7 @@ public class PauseMenu : MonoBehaviour
         pausePanel.SetActive(false);
         pauseMenuOpen = false;
         settingsOpen = false;
+        controlsOpen = false;
 
         playerManager = PlayerManager.instance.gameObject.GetComponent<PlayerManager>();
         sword = GameObject.FindWithTag("SwordMeshChanger");
@@ -46,6 +50,9 @@ public class PauseMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape)) {
             if (settingsOpen) {
                 ToggleSettings();
+            } else if (controlsOpen)
+            {
+                ToggleControls();
             } else
             {
                 TogglePauseMenu();
@@ -85,5 +92,11 @@ public class PauseMenu : MonoBehaviour
         settingsOpen = !settingsOpen;
         settingsPanel.enabled = settingsOpen;
         pausePanel.SetActive(!settingsOpen);
+    }
+
+    public void ToggleControls() {
+        controlsOpen = !controlsOpen;
+        controlsPanel.enabled = controlsOpen;
+        pausePanel.SetActive(!controlsOpen);
     }
 }
