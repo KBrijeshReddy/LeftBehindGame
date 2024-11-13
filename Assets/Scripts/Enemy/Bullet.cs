@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter(Collider other) {
         // Debug.Log("Instantiate Particles");
-
+        
         // Check if it hit the player or other objects and handle accordingly
         if (other.gameObject.CompareTag("Player"))
         {
@@ -26,5 +26,6 @@ public class Bullet : MonoBehaviour
             PlayerHealthManager.instance.TakeDamage(damage);
             Destroy(gameObject);
         }
+      
     }
 }
