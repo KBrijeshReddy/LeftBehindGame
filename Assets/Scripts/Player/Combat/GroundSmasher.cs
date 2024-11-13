@@ -26,7 +26,7 @@ public class GroundSmasher : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && readyTosmash && PlayerHealthManager.instance.UseEnergy("ground smash")) {
             GroundSmash();
-            SettingsManager.instance.PlaySound("ground smash", transform);
+            SettingsManager.instance.PlaySound("ground smash player", transform);
             Instantiate(grounds, groundsl.transform.position, Quaternion.identity);
             await Task.Delay(5000);
             readyTosmash = true;

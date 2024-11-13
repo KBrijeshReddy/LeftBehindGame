@@ -378,13 +378,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  sound: enemy level 1 death
+  deathSFX: enemy level 1 death
+  damageSFX: enemy damaged 1
   loot: {fileID: 11400000, guid: 5dec4e2ce2d8767459ef5c15f0a20198, type: 2}
   objectToDestroy: {fileID: 5240812768330528542}
   particle: {fileID: 7040446181027560177, guid: 43b3695728ff5b547b64cf418b9c86bd, type: 3}
   parent: {fileID: 1268101519858725575}
   maxHealth: 80
-  inDome: 0
   lerpSpeed: 2
   healthBar: {fileID: 5240812768181309531}
 --- !u!1 &5240812768181309529

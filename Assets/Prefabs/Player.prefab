@@ -917,7 +917,7 @@ MonoBehaviour:
   isAttacking: 0
   mouseSens: 200
   speed: 20
-  sprintSpeed: 0
+  sprintSpeed: 10
   gravity: -9.8
   jumpforce: 10
   cameraTransform: {fileID: 6463166260467412614}
