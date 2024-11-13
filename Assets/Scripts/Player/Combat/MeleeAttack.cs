@@ -24,7 +24,7 @@ public class MeleeAttack : MonoBehaviour
             enemy = other.gameObject;
             Debug.Log(sword.GetDamage() + " damage dealt to enemy");
             enemy.GetComponent<EnemyHealthManager>().TakeDamage(sword.GetDamage());
-            enemy.transform.position += (enemy.transform.position - player.transform.position).normalized * knockback;
+           
             Debug.Log("knockbacked");
             PlayerHealthManager.instance.RegenerateEnergy(sword.GetDamage());
         }
