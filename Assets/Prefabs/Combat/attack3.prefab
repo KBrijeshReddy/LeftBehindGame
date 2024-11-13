@@ -128,3 +128,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sword: {fileID: 11400000, guid: 6dfaf9fc41635e942b0e359464f46daf, type: 2}
+  knockback: 100
