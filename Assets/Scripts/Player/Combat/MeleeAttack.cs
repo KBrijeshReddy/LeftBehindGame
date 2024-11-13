@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
+using static UnityEngine.ParticleSystem;
 
 public class MeleeAttack : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class MeleeAttack : MonoBehaviour
     private UpgradableItem sword;
     [SerializeField]
     private float knockback;
+    
     private GameObject player;
     private GameObject enemy;
 
@@ -24,7 +26,8 @@ public class MeleeAttack : MonoBehaviour
             enemy = other.gameObject;
             Debug.Log(sword.GetDamage() + " damage dealt to enemy");
             enemy.GetComponent<EnemyHealthManager>().TakeDamage(sword.GetDamage());
-           
+            
+
             Debug.Log("knockbacked");
             PlayerHealthManager.instance.RegenerateEnergy(sword.GetDamage());
         }

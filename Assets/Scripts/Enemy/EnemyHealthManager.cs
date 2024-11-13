@@ -24,6 +24,12 @@ public class EnemyHealthManager : MonoBehaviour
     private GameObject parent;
     [SerializeField]
     private float maxHealth;
+    [SerializeField]
+    private GameObject particle2;
+    [SerializeField]
+    private GameObject hp;
+
+
 
     [Header("-----------------Preset-----------------")]
     [SerializeField]
@@ -59,6 +65,7 @@ public class EnemyHealthManager : MonoBehaviour
             Destroy(gameObject);
         } else
         {
+            Instantiate(particle2, hp.transform.position, Quaternion.identity);
             SettingsManager.instance.PlaySound(damageSFX, transform);
         }
     }
