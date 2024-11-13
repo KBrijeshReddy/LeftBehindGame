@@ -13,6 +13,7 @@ public class EnemyLevelThreeAttack : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             anim.Play("lvl2_attack");
+            SettingsManager.instance.PlaySound("ground smash enemy", transform);
         }
     }
 }

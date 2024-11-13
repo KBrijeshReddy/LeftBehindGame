@@ -37,7 +37,7 @@ public class InventoryManager : MonoBehaviour
 
         selected = null;
 
-        if (Dialogue.instance.isTutorial)
+        if (SceneNameHolder.scene == "tutorial")
         ResetValues();
     }
 

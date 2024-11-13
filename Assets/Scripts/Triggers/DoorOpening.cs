@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading.Tasks;
 
 public class DoorOpening : MonoBehaviour
 {
@@ -17,11 +18,12 @@ public class DoorOpening : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    async void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
             anim.SetBool("is open", true);
+            await Task.Delay(750);
             foreach (var thing in enemies) {
                 thing.SetActive(true);
             }

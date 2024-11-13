@@ -92,7 +92,7 @@ public class PlayerHealthManager : MonoBehaviour
             blackoutAnim.Play("blackout");
             await Task.Delay(1500);
 
-            if (Dialogue.instance.isTutorial) {
+            if (SceneNameHolder.scene == "tutorial") {
                 SceneManager.LoadScene(tutorialScene);
             } else
             {

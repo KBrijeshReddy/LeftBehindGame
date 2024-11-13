@@ -15,7 +15,8 @@ public class Dialogue : MonoBehaviour
     [HideInInspector]
     public bool canType;
 
-
+    [SerializeField]
+    private List<AudioClip> clips;
     [SerializeField]
     private DialogueTexts dialogueTexts;
 
@@ -27,7 +28,6 @@ public class Dialogue : MonoBehaviour
     private List<string> postEndingLines;
     [SerializeField]
     private SceneChanger sceneChanger;
-    public bool isTutorial;
     [SerializeField]
     private GameObject tutorialEnemy;
 
@@ -40,6 +40,7 @@ public class Dialogue : MonoBehaviour
 
     private int index;
     private List<string> lines = new List<string>();
+    private AudioSource robotSource;
 
     void Start()
     {
@@ -47,6 +48,7 @@ public class Dialogue : MonoBehaviour
         textComp.text = string.Empty;
         canType = false;
         lines.Clear();
+        robotSource = GameObject.FindWithTag("RobotMeshChanger").GetComponent<AudioSource>();
 
         UpdateDialogue(dialogueTexts.GetDialogues());
     }
@@ -88,6 +90,7 @@ public class Dialogue : MonoBehaviour
     public void StartTyping() {
         index = 0;
         StartCoroutine(TypeLine());
+        PlayRandomClip();
     }
 
     IEnumerator TypeLine() {
@@ -103,6 +106,7 @@ public class Dialogue : MonoBehaviour
             index++;    
             textComp.text = string.Empty;
             StartCoroutine(TypeLine());
+            PlayRandomClip();
         } else
         {
             dialogueTexts.exhausted = true;
@@ -114,10 +118,18 @@ public class Dialogue : MonoBehaviour
             {
                 sceneChanger.gameEnd = true;
                 UpdateDialogue(postEndingLines);
-            } else if (isTutorial)
+            } else if (SceneNameHolder.scene == "tutorial")
             {
                 tutorialEnemy.SetActive(true);
             }
         }
+    }
+
+    public void PlayRandomClip() {
+        if (clips.Count == 0) return;
+
+        int randomIndex = Random.Range(0, clips.Count);
+        robotSource.clip = clips[randomIndex];
+        robotSource.Play();
     }
 }

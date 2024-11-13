@@ -43,7 +43,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 33713e231d5ecf442b4123ce35c8c1b4, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.8
   m_Pitch: 1
   Loop: 1
@@ -171,7 +171,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: bdef36357d1d3bc4fa290f67c9cec179, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.22
   m_Pitch: 1
   Loop: 1
@@ -431,9 +431,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ca5b7a424ac281478562bbf53ad409b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inMainMenu: 0
-  inDome: 0
-  inGame: 1
   sound1:
   - {fileID: 5498738832805431780}
   - {fileID: 3291563227963884331}
@@ -449,18 +446,27 @@ MonoBehaviour:
   - {fileID: 6296154778985459013, guid: 620a1b0838ccba24e998b43b508c315e, type: 3}
   - {fileID: 2167776946556288503, guid: 5a3ba5fe7a722b445ba69e7b9d263d3a, type: 3}
   - {fileID: 3449023440181203251, guid: be7b7ac7f95e5e0498fc077f49980800, type: 3}
+  - {fileID: 8236224174943299120, guid: 7ee6fa39f442a8c4ca1945e8bbad9740, type: 3}
   - {fileID: 7177193335376688015, guid: f3936e4d5565f5042af5d870bab71e14, type: 3}
   - {fileID: 3070094126200890562, guid: 4c0dab6f27edfc043b031fb05013a1bc, type: 3}
   - {fileID: 5511763828030543399, guid: 71f403da417404442a42599bf441cf0d, type: 3}
   - {fileID: 8952097920686542588, guid: 96463948f4389ce478c66e16b5370457, type: 3}
+  - {fileID: 366240292814615136, guid: 5a67474ec0b2789418668e96e77c3784, type: 3}
+  - {fileID: 1264849400971650035, guid: b7a72078357c20f4aa435137c1b80aa5, type: 3}
+  - {fileID: 8130126943439791295, guid: b969d7a9e09ac804496848323338bf3a, type: 3}
   sound2Names:
   - enemy level 1 death
   - enemy level 2 death
   - enemy level 3 death
   - magic ball throwing
   - magic ball explosion
-  - ground smash
+  - ground smash player
+  - ground smash enemy
   - saber swing 1
   - saber swing 2
   - saber swing 3
   - level up
+  - enemy damaged 1
+  - enemy damaged 2
+  - enemy damaged 3
+  firstScene: 0
